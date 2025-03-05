@@ -20,6 +20,8 @@ ksp = "2.1.0-1.0.29"
 hiltAndroidCompiler = "2.51.1"
 hiltNavigationCompose = "1.2.0"
 ktlint-version = "11.0.0"
+roomRuntime = "2.6.1"
+constraintlayoutCompose = "1.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +50,14 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 # Navigation
 
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+
+# Room
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+
+# Constraint Layout
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 
 # Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }

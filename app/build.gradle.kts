@@ -95,8 +95,21 @@ dependencies {
     implementation (libs.ktor.client.serialization)
     implementation (libs.ktor.client.logging)
     implementation (libs.logback.classic)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    // constraint layout
+    implementation(libs.androidx.constraintlayout.compose)
 }
 
 kapt {
     correctErrorTypes = true
+}
+
+// Compile time check
+ksp {
+    arg("KOIN_CONFIG_CHECK", "true")
 }
