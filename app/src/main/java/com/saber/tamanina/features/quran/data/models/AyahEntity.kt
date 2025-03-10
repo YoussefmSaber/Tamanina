@@ -6,6 +6,9 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
 
+/**
+ * Represents the table ayah in the application database
+ */
 @Serializable
 @Entity(tableName = "ayahs",
     foreignKeys = [

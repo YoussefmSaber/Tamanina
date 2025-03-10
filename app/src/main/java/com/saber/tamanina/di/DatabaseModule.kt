@@ -13,10 +13,19 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Dagger module to provide database-related dependencies.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
+    /**
+     * Provides the singleton instance of [AppDatabase].
+     *
+     * @param context The application context.
+     * @return The [AppDatabase] instance.
+     */
     @Provides
     @Singleton
     fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -27,12 +36,24 @@ object DatabaseModule {
         ).build()
     }
 
+    /**
+     * Provides the [QuranDao] instance.
+     *
+     * @param appDatabase The [AppDatabase] instance.
+     * @return The [QuranDao] instance.
+     */
     @Provides
     @Singleton
     fun provideQuranDao(appDatabase: AppDatabase): QuranDao {
         return appDatabase.quranDao()
     }
 
+    /**
+     * Provides the [QuranRepository] instance.
+     *
+     * @param quranDao The [QuranDao] instance.
+     * @return The [QuranRepository] instance.
+     */
     @Provides
     @Singleton
     fun provideQuranRepository(quranDao: QuranDao): QuranRepository {

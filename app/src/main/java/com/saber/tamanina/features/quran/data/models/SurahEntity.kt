@@ -4,6 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
 
+/**
+ * Represents the table surahs in the application database
+ */
 @Serializable
 @Entity(tableName = "surahs")
 data class SurahEntity (
